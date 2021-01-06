@@ -27,11 +27,11 @@ addLayer("g", {
     layerShown(){return true},
     upgrades: {
         rows: 2,
-        cols: 3,//<Row><Column> start at 1
+        cols: 2,//<Row><Column> start at 1
         11: {
             title: "Postive Power",
             effect: new Decimal(1000),
-            description: "Boost Proton Reward",
+            description: "Boost Atom Production",
             cost: new Decimal(10),
         },
         12: {
@@ -41,23 +41,13 @@ addLayer("g", {
         },
         13: {
             title: "Positivity Works",
-            description: "So what",
+            description: "So what it works",
             cost: new Decimal(1000),
         },
         21: {
-            title: "Why are their more",
+            title: "Postive Finally",
             description: "Increas Atom Production",
             cost: new Decimal(10000),
-        },
-        22: {
-            title: "Postive Power",
-            description: "Boost Proton Reward",
-            cost: new Decimal(100000),
-        },
-        23: {
-            title: "Postive Power",
-            description: "Boost Proton Reward",
-            cost: new Decimal(1000000),
         },
     }
 })
@@ -113,7 +103,35 @@ addLayer("n", {
     },
     row: 1, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
-        {key: "i", description: "I: Reset for Electrons", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+        {key: "n", description: "N: Reset for Neutrons", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+    ],
+    layerShown(){return true}
+})
+addLayer("q", {
+    name: "Quarkifier", // This is optional, only used in a few places, If absent it just uses the layer id.
+    symbol: "Q", // This appears on the layer's node. Default is the id with the first letter capitalized
+    position: 1, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
+    startData() { return {
+        unlocked: false,
+		points: new Decimal(0),
+    }},
+    color: "#4F41E8",
+    requires: new Decimal(10000), // Can be a function that takes requirement increases into account
+    resource: "Quarks", // Name of prestige currency
+    baseResource: "Electrons", // Name of resource prestige is based on
+    baseAmount() {return player.i.points}, // Get the current amount of baseResource
+    type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
+    exponent: 0.5, // Prestige currency exponent
+    gainMult() { // Calculate the multiplier for main currency from bonuses
+        mult = new Decimal(1)
+        return mult
+    },
+    gainExp() { // Calculate the exponent on main currency from bonuses
+        return new Decimal(1)
+    },
+    row: 2, // Row the layer is in on the tree (0 is the first row)
+    hotkeys: [
+        {key: "q", description: "Q: Reset for Quarks", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true}
 })
