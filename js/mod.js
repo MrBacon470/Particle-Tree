@@ -2,7 +2,7 @@ let modInfo = {
 	name: "The Particle Tree",
 	id: "ParticleTree",
 	author: "MrBacon470",
-	pointsName: "points",
+	pointsName: "Atoms",
 	discordName: "MrBacon Studios",
 	discordLink: "https://discord.gg/PU78QYR",
 	initialStartPoints: new Decimal (10), // Used for hard resets and new players
