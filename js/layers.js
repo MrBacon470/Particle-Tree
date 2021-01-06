@@ -39,12 +39,12 @@ addLayer("g", {
             description: "Increase them gains",
             cost: new Decimal(100),
         },
-        13: {
+        21: {
             title: "Positivity Works",
             description: "So what it works",
             cost: new Decimal(1000),
         },
-        21: {
+        22: {
             title: "Postive Finally",
             description: "Increas Atom Production",
             cost: new Decimal(10000),
