@@ -30,7 +30,7 @@ addLayer("g", {
         cols: 3,//<Row><Column> start at 1
         11: {
             title: "Postive Power",
-            upgradeEffect: new Decimal(1000),
+            effect: new Decimal(1000),
             description: "Boost Proton Reward",
             cost: new Decimal(10),
         },
