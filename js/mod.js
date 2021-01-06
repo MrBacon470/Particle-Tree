@@ -1,10 +1,10 @@
 let modInfo = {
-	name: "The ??? Tree",
-	id: "mymod",
-	author: "nobody",
+	name: "The Particle Tree",
+	id: "ParticleTree",
+	author: "MrBacon470",
 	pointsName: "points",
-	discordName: "",
-	discordLink: "",
+	discordName: "MrBacon Studios",
+	discordLink: "https://discord.gg/PU78QYR",
 	initialStartPoints: new Decimal (10), // Used for hard resets and new players
 	
 	offlineLimit: 1,  // In hours
