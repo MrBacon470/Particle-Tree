@@ -24,7 +24,41 @@ addLayer("g", {
     hotkeys: [
         {key: "g", description: "G: Reset for Protons", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-    layerShown(){return true}
+    layerShown(){return true},
+    upgrades: {
+        rows: 2,
+        cols: 3,
+        0: {
+            title: "Postive Power",
+            description: "Boost Proton Reward",
+            cost: new Decimal(1000),
+        },
+        1: {
+            title: "Postive Power",
+            description: "Boost Proton Reward",
+            cost: new Decimal(1000),
+        },
+        2: {
+            title: "Postive Power",
+            description: "Boost Proton Reward",
+            cost: new Decimal(1000),
+        },
+        3: {
+            title: "Postive Power",
+            description: "Boost Proton Reward",
+            cost: new Decimal(1000),
+        },
+        4: {
+            title: "Postive Power",
+            description: "Boost Proton Reward",
+            cost: new Decimal(1000),
+        },
+        5: {
+            title: "Postive Power",
+            description: "Boost Proton Reward",
+            cost: new Decimal(1000),
+        },
+    }
 })
 addLayer("i", {
     name: "Ionizer", // This is optional, only used in a few places, If absent it just uses the layer id.
