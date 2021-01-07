@@ -18,7 +18,10 @@ addLayer("g", {
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
-        return new Decimal(1)
+        exp = new Decimal(1);
+        if (hasUpgrade("g", 12))  mult = mult.mul(upgradeEffect("g", 12));
+        if (hasUpgrade("g", 22)) mult = mult.mul(upgradeEffect("g", 22));
+        return exp;
     },
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
@@ -36,17 +39,20 @@ addLayer("g", {
         },
         12: {
             title: "++",
+            effect: new Decimal(10000),
             description: "Increase them gains",
             cost: new Decimal(100),
         },
         21: {
             title: "Positivity Works",
+            effect: new Decimal(100000),
             description: "So what it works",
             cost: new Decimal(1000),
         },
         22: {
             title: "Postive Finally",
-            description: "Increas Atom Production",
+            effect: new Decimal(1e8),
+            description: "Proton Booster II",
             cost: new Decimal(10000),
         },
     }
