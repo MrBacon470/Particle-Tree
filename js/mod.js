@@ -42,9 +42,15 @@ function getPointGen() {
 		return new Decimal(0)
 
 	let gain = new Decimal(1)
-	gain = gain.mul(Math.sqrt(player.g.points) + 1);
+	gain = gain.mul(Math.sqrt(player.g.points));
+	gain = gain.mul((Math.sqrt(player.i.points) * 100) + 1);
+	gain = gain.mul((Math.sqrt(player.n.points) * 1000) + 1);
 	if (hasUpgrade("g", 11)) gain = gain.mul(upgradeEffect("g", 11));
 	if (hasUpgrade("g", 21)) gain = gain.mul(upgradeEffect("g", 21));
+	if (hasUpgrade("i", 11)) gain = gain.mul(upgradeEffect("i", 11));
+	if (hasUpgrade("i", 21)) gain = gain.mul(upgradeEffect("i", 21));
+	if (hasUpgrade("n", 11)) gain = gain.mul(upgradeEffect("n", 11));
+	if (hasUpgrade("n", 21)) gain = gain.mul(upgradeEffect("n", 21));
 	return gain
 }
 

@@ -21,6 +21,8 @@ addLayer("g", {
         exp = new Decimal(1);
         if (hasUpgrade("g", 12))  mult = mult.mul(upgradeEffect("g", 12));
         if (hasUpgrade("g", 22)) mult = mult.mul(upgradeEffect("g", 22));
+        if (hasUpgrade("i", 22)) mult = mult.mul(upgradeEffect("i", 22));
+        if (hasUpgrade("n", 22)) mult = mult.mul(upgradeEffect("n", 22));
         return exp;
     },
     row: 0, // Row the layer is in on the tree (0 is the first row)
@@ -33,19 +35,19 @@ addLayer("g", {
         cols: 2,//<Row><Column> start at 1
         11: {
             title: "Postive Power",
-            effect: new Decimal(1000),
+            effect: new Decimal(10),
             description: "Boost Atom Production",
             cost: new Decimal(10),
         },
         12: {
             title: "++",
-            effect: new Decimal(10000),
+            effect: new Decimal(100),
             description: "Increase them gains",
             cost: new Decimal(100),
         },
         21: {
             title: "Positivity Works",
-            effect: new Decimal(100000),
+            effect: new Decimal(1000),
             description: "So what it works",
             cost: new Decimal(1000),
         },
@@ -77,13 +79,43 @@ addLayer("i", {
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
-        return new Decimal(1)
+        exp = new Decimal(1);
+        if (hasUpgrade("i", 12))  mult = mult.mul(upgradeEffect("i", 12));
+        return exp;
     },
     row: 1, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "i", description: "I: Reset for Electrons", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-    layerShown(){return true}
+    layerShown(){return true},
+    upgrades: {
+        rows: 2,
+        cols: 2,//<Row><Column> start at 1
+        11: {
+            title: "Electricity?",
+            effect: new Decimal(1000),
+            description: "Boost Atom Production",
+            cost: new Decimal(100),
+        },
+        12: {
+            title: "--",
+            effect: new Decimal(10000),
+            description: "Increase them gains",
+            cost: new Decimal(1000),
+        },
+        21: {
+            title: "Statically",
+            effect: new Decimal(100000),
+            description: "Static Electricity Boosts more production",
+            cost: new Decimal(10000),
+        },
+        22: {
+            title: "Negative Finally",
+            effect: new Decimal(1e8),
+            description: "Proton Booster III",
+            cost: new Decimal(100000),
+        },
+    }
 })
 addLayer("n", {
     name: "Neutralizer", // This is optional, only used in a few places, If absent it just uses the layer id.
@@ -111,7 +143,35 @@ addLayer("n", {
     hotkeys: [
         {key: "n", description: "N: Reset for Neutrons", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-    layerShown(){return true}
+    layerShown(){return true},
+    upgrades: {
+        rows: 2,
+        cols: 2,//<Row><Column> start at 1
+        11: {
+            title: "Switzerland",
+            effect: new Decimal(1000),
+            description: "Boost Atom Production",
+            cost: new Decimal(100),
+        },
+        12: {
+            title: "+-",
+            effect: new Decimal(10000),
+            description: "Increase them gains",
+            cost: new Decimal(1000),
+        },
+        21: {
+            title: "Statically",
+            effect: new Decimal(100000),
+            description: "Ludicrous Speed",
+            cost: new Decimal(10000),
+        },
+        22: {
+            title: "True Neutrality",
+            effect: new Decimal(1e8),
+            description: "Proton Booster IV",
+            cost: new Decimal(100000),
+        },
+    },
 })
 addLayer("q", {
     name: "Quarkifier", // This is optional, only used in a few places, If absent it just uses the layer id.
