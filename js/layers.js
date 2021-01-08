@@ -121,7 +121,7 @@ addLayer("q", {
         unlocked: false,
 		points: new Decimal(0),
     }},
-    color: "#4F41E8",
+    color: "#E8CF41",
     requires: new Decimal(10000), // Can be a function that takes requirement increases into account
     resource: "Quarks", // Name of prestige currency
     baseResource: "Electrons", // Name of resource prestige is based on
