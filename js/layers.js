@@ -199,6 +199,34 @@ addLayer("q", {
     hotkeys: [
         {key: "q", description: "Q: Reset for Quarks", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-    layerShown(){return true}
+    layerShown(){return true},
+    upgrades: {
+        rows: 2,
+        cols: 2,//<Row><Column> start at 1
+        11: {
+            title: "Smol Bois",
+            effect: new Decimal(1000),
+            description: "Boost Atom Production",
+            cost: new Decimal(100),
+        },
+        12: {
+            title: "<=",
+            effect: new Decimal(10000),
+            description: "Increase them gains",
+            cost: new Decimal(1000),
+        },
+        21: {
+            title: "Quarkified",
+            effect: new Decimal(100000),
+            description: "Ludicrous Speed",
+            cost: new Decimal(10000),
+        },
+        22: {
+            title: "Minaturized",
+            effect: new Decimal(1e8),
+            description: "Proton Booster V",
+            cost: new Decimal(100000),
+        },
+    }
 })
 
