@@ -30,6 +30,11 @@ addLayer("g", {
         {key: "g", description: "G: Reset for Protons", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true},
+    milestones: {
+        rows: 1,
+        cols: 5
+
+    },
     upgrades: {
         rows: 2,
         cols: 2,//<Row><Column> start at 1
